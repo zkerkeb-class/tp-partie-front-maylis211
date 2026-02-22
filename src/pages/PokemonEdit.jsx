@@ -63,6 +63,11 @@ const PokemonEdit = () => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  const onTypeChange = (e) => {
+    const values = Array.from(e.target.selectedOptions).map((o) => o.value);
+    setForm((prev) => ({ ...prev, type: values.join(", ") }));
+  };
+
   const buildPayload = () => ({
     id: Number(id),
     name: {
@@ -145,8 +150,33 @@ const PokemonEdit = () => {
           <input name="nameChinese" value={form.nameChinese} onChange={onChange} />
         </div>
         <div className="form-row">
-          <label>Types (ex: Fire, Flying)</label>
-          <input name="type" value={form.type} onChange={onChange} />
+          <label>Types (Ctrl pour multi-selection)</label>
+          <select
+            name="type"
+            multiple
+            size="6"
+            value={form.type.split(",").map((t) => t.trim()).filter(Boolean)}
+            onChange={onTypeChange}
+          >
+            <option value="Bug">Bug</option>
+            <option value="Dark">Dark</option>
+            <option value="Dragon">Dragon</option>
+            <option value="Electric">Electric</option>
+            <option value="Fairy">Fairy</option>
+            <option value="Fighting">Fighting</option>
+            <option value="Fire">Fire</option>
+            <option value="Flying">Flying</option>
+            <option value="Ghost">Ghost</option>
+            <option value="Grass">Grass</option>
+            <option value="Ground">Ground</option>
+            <option value="Ice">Ice</option>
+            <option value="Normal">Normal</option>
+            <option value="Poison">Poison</option>
+            <option value="Psychic">Psychic</option>
+            <option value="Rock">Rock</option>
+            <option value="Steel">Steel</option>
+            <option value="Water">Water</option>
+          </select>
         </div>
         <div className="form-row">
           <label>Image URL</label>
@@ -154,28 +184,28 @@ const PokemonEdit = () => {
         </div>
 
         <div className="form-row">
-          <label>HP</label>
-          <input name="hp" value={form.hp} onChange={onChange} />
+          <label>HP: {form.hp || 0}</label>
+          <input type="range" min="1" max="255" name="hp" value={form.hp} onChange={onChange} />
         </div>
         <div className="form-row">
-          <label>Attack</label>
-          <input name="attack" value={form.attack} onChange={onChange} />
+          <label>Attack: {form.attack || 0}</label>
+          <input type="range" min="1" max="255" name="attack" value={form.attack} onChange={onChange} />
         </div>
         <div className="form-row">
-          <label>Defense</label>
-          <input name="defense" value={form.defense} onChange={onChange} />
+          <label>Defense: {form.defense || 0}</label>
+          <input type="range" min="1" max="255" name="defense" value={form.defense} onChange={onChange} />
         </div>
         <div className="form-row">
-          <label>Special Attack</label>
-          <input name="spAttack" value={form.spAttack} onChange={onChange} />
+          <label>Special Attack: {form.spAttack || 0}</label>
+          <input type="range" min="1" max="255" name="spAttack" value={form.spAttack} onChange={onChange} />
         </div>
         <div className="form-row">
-          <label>Special Defense</label>
-          <input name="spDefense" value={form.spDefense} onChange={onChange} />
+          <label>Special Defense: {form.spDefense || 0}</label>
+          <input type="range" min="1" max="255" name="spDefense" value={form.spDefense} onChange={onChange} />
         </div>
         <div className="form-row">
-          <label>Speed</label>
-          <input name="speed" value={form.speed} onChange={onChange} />
+          <label>Speed: {form.speed || 0}</label>
+          <input type="range" min="1" max="255" name="speed" value={form.speed} onChange={onChange} />
         </div>
 
         <div className="form-actions">

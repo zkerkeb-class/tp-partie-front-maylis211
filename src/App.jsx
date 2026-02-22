@@ -16,7 +16,7 @@ function App() {
   }, [theme])
 
   return (
-    <div>
+    <div className="container">
       <div className="nav">
         <Link to="/" className="nav-link">Liste</Link>
         <Link to="/new" className="nav-link">Ajouter</Link>

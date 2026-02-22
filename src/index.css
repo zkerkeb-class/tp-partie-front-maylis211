@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 @font-face {
   font-family: "Michelle";
@@ -17,7 +17,7 @@
   --card-bg: #ffffff;
   --panel: rgba(255, 255, 255, 0.9);
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-  --body-bg: radial-gradient(#2a75bb, #f6f3ea);
+  --body-bg: radial-gradient(#989b9f, #f6f3ea);
   --nav-bg: rgba(255, 255, 255, 0.8);
   --page-bg: #ffffff;
   font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
@@ -103,6 +103,14 @@ select {
   padding: 0.6em 0.8em;
   background: var(--page-bg);
   color: var(--ink);
+}
+
+input[type="range"] {
+  padding: 0;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2a75bb, #4aa3ff);
+  border: none;
 }
 
 input:focus,

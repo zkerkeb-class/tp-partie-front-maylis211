@@ -109,15 +109,15 @@ const PokeList = () => {
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page <= 1}
                 >
-                    Precedent
+                    &lt; Precedent
                 </button>
-                <span>{page} / {totalPages}</span>
+                <span>Page {page}/{totalPages}</span>
                 <button
                     type="button"
                     onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                     disabled={page >= totalPages}
                 >
-                    Suivant
+                    Suivant &gt;
                 </button>
             </div>
             <ul className="card-grid">
@@ -133,15 +133,15 @@ const PokeList = () => {
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page <= 1}
                 >
-                    Precedent
+                    &lt; Precedent
                 </button>
-                <span>{page} / {totalPages}</span>
+                <span>Page {page}/{totalPages}</span>
                 <button
                     type="button"
                     onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                     disabled={page >= totalPages}
                 >
-                    Suivant
+                    Suivant &gt;
                 </button>
             </div>
         </div>
